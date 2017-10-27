@@ -25,11 +25,13 @@ import com.vaadin.ui.html.Label;
 @Route("")
 public class RootComponent extends Div {
 
-    public RootComponent(@Autowired Greeter greeter) {
+    public RootComponent(@Autowired Greeter greeter,
+            @Autowired ExampleTemplate template) {
         Label greeting = new Label(greeter.sayHello());
         greeting.getElement().getStyle().set("display", "block");
         RouterLink link = new RouterLink("Navigate to another component",
                 ViewComponent.class);
-        add(greeting, link);
+        add(greeting, link, template);
+        add(template);
     }
 }
