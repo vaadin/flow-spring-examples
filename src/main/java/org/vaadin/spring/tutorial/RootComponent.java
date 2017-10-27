@@ -18,12 +18,14 @@ package org.vaadin.spring.tutorial;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.router.Route;
-import com.vaadin.ui.html.Label;
+import com.vaadin.ui.html.Div;
 
 @Route("")
-public class RootComponent extends Label {
+public class RootComponent extends Div {
 
-    public RootComponent(@Autowired Greeter greeter) {
+    public RootComponent(@Autowired Greeter greeter,
+            @Autowired ExampleTemplate template) {
         setText(greeter.sayHello());
+        add(template);
     }
 }
