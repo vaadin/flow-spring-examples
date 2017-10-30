@@ -19,7 +19,7 @@
         <vaadin.project.version>10.0.0.alpha3</vaadin.project.version>
         <servlet.api.version>3.1.0</servlet.api.version>
         <selenium.server.version>3.4.0</selenium.server.version>
-        <flow.project.version>1.0.0.alpha6</flow.project.version>
+        <flow.project.version>1.0.0.alpha7</flow.project.version>
 
         <!-- Plugins -->
         <frontend.maven.plugin.version>1.5</frontend.maven.plugin.version>
@@ -72,7 +72,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-spring-boot-starter</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${flow.project.version}</version>
         </dependency>
         
         <dependency>
