@@ -18,18 +18,15 @@ package org.vaadin.spring.tutorial;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.router.Route;
-import com.vaadin.router.RouterLink;
-import com.vaadin.ui.html.Div;
+import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.html.Label;
 
-@Route("")
-public class RootComponent extends Div {
+@Route("view")
+@UIScope
+public class ViewComponent extends Label {
 
-    public RootComponent(@Autowired Greeter greeter) {
-        Label greeting = new Label(greeter.sayHello());
-        greeting.getElement().getStyle().set("display", "block");
-        RouterLink link = new RouterLink("Navigate to another component",
-                ViewComponent.class);
-        add(greeting, link);
+    public ViewComponent(@Autowired Greeter greeter) {
+        // it's the same Greeter instance as in the RootComponent class
+        setText(greeter.sayHello());
     }
 }
