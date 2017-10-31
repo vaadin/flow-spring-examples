@@ -13,20 +13,23 @@
   ~ License for the specific language governing permissions and limitations under
   ~ the License.
   -->
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>Frontend</title>
+<!-- Dependency resources -->
+<link rel="import" href="bower_components/polymer/polymer.html">
 
-    <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+<!-- Defines the example-template element -->
+<dom-module id="example-template">
+    <template>
+        <span>[[message]]</span>
+    </template>
     
-    <link rel="import" href="ExampleTemplate.html">
-
-</head>
-<body>
-</body>
-</html>
-
+    <!-- Polymer boilerplate to register the example-template element -->
+    <script>
+        class ExampleTemplate extends Polymer.Element {
+            static get is() {
+                return 'example-template'
+            }
+        }
+        customElements.define(ExampleTemplate.is, ExampleTemplate);
+    </script>
+</dom-module>
