@@ -16,10 +16,10 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <!-- Dependencies -->
-        <vaadin.project.version>10.0.0.alpha4</vaadin.project.version>
+        <vaadin.project.version>10.0.0-alpha6</vaadin.project.version>
         <servlet.api.version>3.1.0</servlet.api.version>
         <selenium.server.version>3.4.0</selenium.server.version>
-        <flow.project.version>1.0.0.alpha8</flow.project.version>
+        <flow.project.version>1.0.0.alpha9</flow.project.version>
 
         <!-- Plugins -->
         <frontend.maven.plugin.version>1.5</frontend.maven.plugin.version>
