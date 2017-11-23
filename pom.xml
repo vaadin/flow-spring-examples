@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.vaadin.spring</groupId>
     <artifactId>flow.tutorial</artifactId>
@@ -12,14 +13,15 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.reporting.outputEncoding>UTF-8
+        </project.reporting.outputEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <!-- Dependencies -->
         <vaadin.project.version>10.0.0-alpha6</vaadin.project.version>
         <servlet.api.version>3.1.0</servlet.api.version>
         <selenium.server.version>3.4.0</selenium.server.version>
-        <flow.project.version>1.0.0.alpha10</flow.project.version>
+        <flow.project.version>1.0.0.alpha11</flow.project.version>
 
         <!-- Plugins -->
         <frontend.maven.plugin.version>1.5</frontend.maven.plugin.version>
@@ -30,7 +32,9 @@
         <node.version>v7.10.0</node.version>
         <npm.version>5.0.3</npm.version>
 
-        <frontend.working.directory>src/main/resources/META-INF/resources/frontend</frontend.working.directory>
+        <frontend.working.directory>
+            src/main/resources/META-INF/resources/frontend
+        </frontend.working.directory>
     </properties>
 
     <repositories>
@@ -43,13 +47,13 @@
             <id>vaadin-addons</id>
             <url>http://maven.vaadin.com/vaadin-addons</url>
         </repository>
-        
+
         <repository>
             <id>webjars</id>
             <url>https://dl.bintray.com/webjars/maven</url>
         </repository>
     </repositories>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -68,17 +72,16 @@
             <artifactId>vaadin</artifactId>
             <version>${vaadin.project.version}</version>
         </dependency>
-    
+        
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-spring-boot-starter</artifactId>
             <version>${flow.project.version}</version>
         </dependency>
-        
+
         <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-components</artifactId>
-            <version>${flow.project.version}</version>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>polymer</artifactId>
         </dependency>
 
         <dependency>
@@ -104,21 +107,27 @@
                 <configuration>
                     <filesets>
                         <fileset>
-                            <directory>${frontend.working.directory}/bower_components</directory>
+                            <directory>
+                                ${frontend.working.directory}/bower_components
+                            </directory>
                         </fileset>
                         <fileset>
-                            <directory>${frontend.working.directory}/build</directory>
+                            <directory>${frontend.working.directory}/build
+                            </directory>
                         </fileset>
                         <fileset>
-                            <directory>${frontend.working.directory}/node</directory>
+                            <directory>${frontend.working.directory}/node
+                            </directory>
                         </fileset>
                         <fileset>
-                            <directory>${frontend.working.directory}/node_modules</directory>
+                            <directory>
+                                ${frontend.working.directory}/node_modules
+                            </directory>
                         </fileset>
                     </filesets>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -126,7 +135,8 @@
                 <configuration>
                     <nodeVersion>${node.version}</nodeVersion>
                     <npmVersion>${npm.version}</npmVersion>
-                    <workingDirectory>${frontend.working.directory}</workingDirectory>
+                    <workingDirectory>${frontend.working.directory}
+                    </workingDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -178,12 +188,15 @@
                         <artifactId>maven-war-plugin</artifactId>
                         <version>${maven.war.plugin.version}</version>
                         <configuration>
-                           <webResources>
+                            <webResources>
                                 <resource>
-                                    <directory>${frontend.working.directory}/build</directory>
+                                    <directory>
+                                        ${frontend.working.directory}/build
+                                    </directory>
                                 </resource>
                             </webResources>
-                            <packagingExcludes>**/node_modules/,**/node/,**/etc/,**/bower.json,**/package.json
+                            <packagingExcludes>
+                                **/node_modules/,**/node/,**/etc/,**/bower.json,**/package.json
                             </packagingExcludes>
                         </configuration>
                     </plugin>
