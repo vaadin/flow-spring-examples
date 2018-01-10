@@ -20,11 +20,11 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.vaadin.spring.tutorial.ExampleTemplate.ExampleModel;
 
-import com.vaadin.flow.model.TemplateModel;
-import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.ui.Tag;
-import com.vaadin.ui.common.HtmlImport;
-import com.vaadin.ui.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.component.Tag;
+import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.polymertemplate.PolymerTemplate;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import com.vaadin.flow.templatemodel.TemplateModel;
 
 /**
  * Simple template example.

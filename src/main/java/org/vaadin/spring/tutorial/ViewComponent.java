@@ -17,9 +17,9 @@ package org.vaadin.spring.tutorial;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vaadin.router.Route;
-import com.vaadin.spring.annotation.UIScope;
-import com.vaadin.ui.html.Label;
+import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.router.Route;
+import com.vaadin.flow.spring.annotation.UIScope;
 
 @Route("view")
 @UIScope

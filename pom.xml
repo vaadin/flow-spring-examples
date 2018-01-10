@@ -16,10 +16,9 @@
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
         <!-- Dependencies -->
-        <vaadin.project.version>10.0.0-alpha6</vaadin.project.version>
+        <vaadin.version>10.0.0.alpha12</vaadin.version>
         <servlet.api.version>3.1.0</servlet.api.version>
         <selenium.server.version>3.4.0</selenium.server.version>
-        <flow.project.version>1.0.0.alpha10</flow.project.version>
 
         <!-- Plugins -->
         <frontend.maven.plugin.version>1.5</frontend.maven.plugin.version>
@@ -35,8 +34,8 @@
 
     <repositories>
         <repository>
-            <id>flow-internal-release</id>
-            <url>https://repo.vaadin.com/nexus/content/repositories/flow</url>
+            <id>vaadin-prereleases</id>
+            <url>https://maven.vaadin.com/vaadin-prereleases</url>
         </repository>
 
         <repository>
@@ -54,10 +53,10 @@
         <dependencies>
             <dependency>
                 <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-webjars-bom</artifactId>
+                <artifactId>vaadin-bom</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
-                <version>${flow.project.version}</version>
+                <version>${vaadin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -66,19 +65,12 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin</artifactId>
-            <version>${vaadin.project.version}</version>
+            <version>${vaadin.version}</version>
         </dependency>
     
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-spring-boot-starter</artifactId>
-            <version>${flow.project.version}</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-components</artifactId>
-            <version>${flow.project.version}</version>
         </dependency>
 
         <dependency>
@@ -167,7 +159,7 @@
                 <dependency>
                     <groupId>com.vaadin</groupId>
                     <artifactId>flow-server-production-mode</artifactId>
-                    <version>${flow.project.version}</version>
+                    <version>${vaadin.version}</version>
                 </dependency>
             </dependencies>
 

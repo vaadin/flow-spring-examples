@@ -18,11 +18,11 @@ package org.vaadin.spring.tutorial;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import com.vaadin.server.BootstrapListener;
-import com.vaadin.server.BootstrapPageResponse;
-import com.vaadin.server.ServiceInitEvent;
-import com.vaadin.server.VaadinServiceInitListener;
-import com.vaadin.spring.annotation.SpringComponent;
+import com.vaadin.flow.server.BootstrapListener;
+import com.vaadin.flow.server.BootstrapPageResponse;
+import com.vaadin.flow.server.ServiceInitEvent;
+import com.vaadin.flow.server.VaadinServiceInitListener;
+import com.vaadin.flow.spring.annotation.SpringComponent;
 
 /**
  * Appends {@code meta} tag to the bootstrap page.

@@ -15,8 +15,8 @@
  */
 package org.vaadin.spring.tutorial;
 
-import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.spring.annotation.UIScope;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import com.vaadin.flow.spring.annotation.UIScope;
 
 @SpringComponent
 @UIScope

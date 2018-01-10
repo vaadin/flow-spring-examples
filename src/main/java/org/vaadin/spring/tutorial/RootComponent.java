@@ -17,10 +17,10 @@ package org.vaadin.spring.tutorial;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vaadin.router.Route;
-import com.vaadin.router.RouterLink;
-import com.vaadin.ui.html.Div;
-import com.vaadin.ui.html.Label;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouterLink;
 
 @Route("")
 public class RootComponent extends Div {
