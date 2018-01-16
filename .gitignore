@@ -7,8 +7,3 @@ target/
 
 # Mac
 *.DS_Store
-
-bower_components/
-node/
-node_modules/
-etc/
