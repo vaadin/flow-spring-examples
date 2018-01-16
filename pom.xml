@@ -18,19 +18,19 @@
         <!-- Dependencies -->
         <vaadin.version>10.0.0.alpha12</vaadin.version>
         <servlet.api.version>3.1.0</servlet.api.version>
-        <selenium.server.version>3.4.0</selenium.server.version>
-
-        <!-- Plugins -->
-        <frontend.maven.plugin.version>1.5</frontend.maven.plugin.version>
-        <maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
-        <maven.war.plugin.version>3.1.0</maven.war.plugin.version>
-
-        <!-- Frontend -->
-        <node.version>v7.10.0</node.version>
-        <npm.version>5.0.3</npm.version>
-
-        <frontend.working.directory>src/main/resources/META-INF/resources/frontend</frontend.working.directory>
     </properties>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>vaadin-prereleases</id>
+            <url>https://maven.vaadin.com/vaadin-prereleases</url>
+        </pluginRepository>
+
+        <pluginRepository>
+            <id>spring-milestone</id>
+            <url>https://repo.spring.io/milestone/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <repositories>
         <repository>
@@ -65,7 +65,6 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin</artifactId>
-            <version>${vaadin.version}</version>
         </dependency>
     
         <dependency>
@@ -79,7 +78,22 @@
             <version>${servlet.api.version}</version>
             <scope>provided</scope>
         </dependency>
-
+        <!-- Fix version conflicts between various dependencies -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -87,57 +101,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.5.7.RELEASE</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-clean-plugin</artifactId>
-                <version>${maven.clean.plugin.version}</version>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${frontend.working.directory}/bower_components</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${frontend.working.directory}/build</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${frontend.working.directory}/node</directory>
-                        </fileset>
-                        <fileset>
-                            <directory>${frontend.working.directory}/node_modules</directory>
-                        </fileset>
-                    </filesets>
-                </configuration>
-            </plugin>
-            
-            <plugin>
-                <groupId>com.github.eirslett</groupId>
-                <artifactId>frontend-maven-plugin</artifactId>
-                <version>1.4</version>
-                <configuration>
-                    <nodeVersion>${node.version}</nodeVersion>
-                    <npmVersion>${npm.version}</npmVersion>
-                    <workingDirectory>${frontend.working.directory}</workingDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>install-node-and-npm</id>
-                        <goals>
-                            <goal>install-node-and-npm</goal>
-                            <goal>npm</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>npm run</id>
-                        <goals>
-                            <goal>npm</goal>
-                        </goals>
-                        <configuration>
-                            <arguments>${npm.build.goal}</arguments>
-                        </configuration>
-                    </execution>
-                </executions>
+                <version>2.0.0.M7</version>
             </plugin>
         </plugins>
     </build>
@@ -151,38 +115,33 @@
                 </property>
             </activation>
 
-            <properties>
-                <npm.build.goal>run prodMode</npm.build.goal>
-            </properties>
-
             <dependencies>
                 <dependency>
                     <groupId>com.vaadin</groupId>
                     <artifactId>flow-server-production-mode</artifactId>
-                    <version>${vaadin.version}</version>
                 </dependency>
             </dependencies>
 
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-war-plugin</artifactId>
-                        <version>${maven.war.plugin.version}</version>
-                        <configuration>
-                           <webResources>
-                                <resource>
-                                    <directory>${frontend.working.directory}/build</directory>
-                                </resource>
-                            </webResources>
-                            <packagingExcludes>**/node_modules/,**/node/,**/etc/,**/bower.json,**/package.json
-                            </packagingExcludes>
-                        </configuration>
+                        <groupId>com.vaadin</groupId>
+                        <artifactId>flow-maven-plugin</artifactId>
+                        <version>0.0.7</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>copy-production-files</goal>
+                                    <goal>transpile-production-files</goal>
+                                </goals>
+                                <configuration>
+                                    <frontendWorkingDirectory>${project.basedir}/src/main/resources/META-INF/resources/frontend/</frontendWorkingDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
-
                 </plugins>
             </build>
         </profile>
-
     </profiles>
 </project>
