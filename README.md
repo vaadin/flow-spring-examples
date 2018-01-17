@@ -5,6 +5,13 @@ This project contains the source code for the tutorial for using Vaadin and Spri
 
 The tutorial can be found [here](https://github.com/vaadin/flow/tree/master/flow-documentation/spring).
 
+The topics that are covered in this tutorial project:
+* Getting Started with Vaadin Spring for Flow and Spring Boot: the initial `@SpringBootApplication` class.
+* Injection and Scopes with Vaadin Spring
+* Navigation with Vaadin Spring
+* Register VaadinServiceInitListener via the Spring DI mechanism
+* Flow template within Spring Boot application
+
 ## Running the project from command line
 
 Run `mvn clean install spring-boot:run` in the project root directory. After the server has started point your browser to [http://localhost:8080](http://localhost:8080) to see the resulting application.
