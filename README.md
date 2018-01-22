@@ -11,6 +11,7 @@ The topics that are covered in this tutorial project:
 * Navigation with Vaadin Spring
 * Register VaadinServiceInitListener via the Spring DI mechanism
 * Flow template within Spring Boot application
+* Use I18N in Spring application
 
 ## Running the project from command line
 
