@@ -2,8 +2,8 @@ target/
 .classpath
 .project
 .settings/
-.idea
+.idea/
 *.iml
-
-# Mac
 *.DS_Store
+
+/src/main/webapp/frontend-es*/
