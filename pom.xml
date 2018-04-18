@@ -62,7 +62,8 @@
     
         <dependency>
             <groupId>com.vaadin</groupId>
-            <artifactId>flow-spring-boot-starter</artifactId>
+            <artifactId>vaadin-spring-boot-starter</artifactId>
+            <version>10.0.0.beta1</version>
         </dependency>
 
         <dependency>
