@@ -22,7 +22,6 @@ import java.util.Locale;
 
 import org.springframework.stereotype.Component;
 
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.i18n.I18NProvider;
 
 /**
@@ -35,11 +34,6 @@ public class SimpleI18NProvider implements I18NProvider {
     public List<Locale> getProvidedLocales() {
         return Collections.unmodifiableList(
                 Arrays.asList(Locale.ENGLISH, Locale.CHINESE));
-    }
-
-    @Override
-    public String getTranslation(String key, Object... params) {
-        return getTranslation(key, UI.getCurrent().getLocale(), params);
     }
 
     @Override
