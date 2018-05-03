@@ -18,10 +18,10 @@
         <webapp.directory>src/main/webapp</webapp.directory>
 
         <!-- Dependencies -->
-        <vaadin.version>10.0.0.beta8</vaadin.version>
+        <vaadin.version>10.0.0.beta9</vaadin.version>
         <jackson.version>2.9.2</jackson.version>
         <spring-boot.version>2.0.0.RELEASE</spring-boot.version>
-        <flow.maven.plugin.version>1.0.0.beta7</flow.maven.plugin.version>
+        <flow.maven.plugin.version>1.0.0.beta9</flow.maven.plugin.version>
     </properties>
 
     <pluginRepositories>
@@ -64,7 +64,6 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
-            <version>10.0.0.beta1</version>
         </dependency>
 
         <dependency>

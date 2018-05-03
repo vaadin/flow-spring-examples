@@ -44,7 +44,7 @@ public class RootComponent extends Div implements LocaleChangeObserver {
                 event -> getUI().get().setLocale(Locale.CHINESE));
 
         link = new RouterLink(
-                getI18NProvider().getTranslation("root.navigate_to_component"),
+                getTranslation("root.navigate_to_component"),
                 ViewComponent.class);
 
         Style linkStyle = link.getElement().getStyle();
@@ -58,7 +58,7 @@ public class RootComponent extends Div implements LocaleChangeObserver {
     @Override
     public void localeChange(LocaleChangeEvent event) {
         link.setText(
-                getI18NProvider().getTranslation("root.navigate_to_component"));
+                getTranslation("root.navigate_to_component"));
     }
 
 }
