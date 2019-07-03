@@ -21,20 +21,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.i18n.LocaleChangeEvent;
 import com.vaadin.flow.i18n.LocaleChangeObserver;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 
-@Route("")
-public class RootComponent extends Div implements LocaleChangeObserver {
+@Route
+public class MainView extends VerticalLayout implements LocaleChangeObserver {
 
     private RouterLink link;
 
-    public RootComponent(@Autowired Greeter greeter,
+    public MainView(@Autowired Greeter greeter,
             @Autowired ExampleTemplate template) {
+        H1 heading = new H1("Vaadin + Spring examples");
+        
         Label greeting = new Label(greeter.sayHello());
         Style grretingStyle = greeting.getElement().getStyle();
         grretingStyle.set("display", "block");
@@ -51,8 +55,7 @@ public class RootComponent extends Div implements LocaleChangeObserver {
         linkStyle.set("display", "block");
         linkStyle.set("margin-bottom", "10px");
 
-        add(greeting, button, link, template);
-        add(template);
+        add(heading, greeting, button, link, template);
     }
 
     @Override
