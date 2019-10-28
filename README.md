@@ -1,11 +1,11 @@
-Vaadin Spring tutorial
+Flow Spring examples
 ======================
 
-This project contains the source code for the tutorial for using Vaadin and Spring together with the help of Spring Boot.
+This project contains the source code for the examples for using Vaadin and Spring together with the help of Spring Boot.
 
 The tutorial can be found [here](https://vaadin.com/docs/v14/flow/spring/tutorial-spring-basic.html).
 
-The topics that are covered in this tutorial project:
+The topics that are covered in this example project:
 * Getting Started with Vaadin Spring for Flow and Spring Boot: the initial `@SpringBootApplication` class.
 * Injection and Scopes with Vaadin Spring
 * Navigation with Vaadin Spring
