@@ -25,7 +25,7 @@ const themePartRegex = /(\\|\/)themes\1[\s\S]*?\1/;
 const frontendFolder = require('path').resolve(__dirname, 'frontend');
 
 const fileNameOfTheFlowGeneratedMainEntryPoint = require('path').resolve(__dirname, 'target/frontend/generated-flow-imports.js');
-const mavenOutputFolderForFlowBundledFiles = require('path').resolve(__dirname, '');
+const mavenOutputFolderForFlowBundledFiles = require('path').resolve(__dirname, 'target/classes/META-INF/VAADIN');
 
 const devmodeGizmoJS = '@vaadin/flow-frontend/VaadinDevmodeGizmo.js'
 
@@ -47,7 +47,7 @@ const projectStaticAssetsFolders = [
   frontendFolder
 ];
 
-const projectStaticAssetsOutputFolder = require('path').resolve(__dirname, '../VAADIN/static');
+const projectStaticAssetsOutputFolder = require('path').resolve(__dirname, 'target/classes/META-INF/VAADIN/static');
 
 // Folders in the project which can contain application themes
 const themeProjectFolders = projectStaticAssetsFolders.map((folder) =>
