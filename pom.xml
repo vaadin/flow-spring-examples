@@ -69,7 +69,7 @@
 
     <profiles>
         <profile>
-            <id>productionMode</id>
+            <id>production</id>
             <activation>
                 <property>
                     <name>vaadin.productionMode</name>
@@ -87,8 +87,8 @@
                 <plugins>
                     <plugin>
                         <groupId>com.vaadin</groupId>
-                        <artifactId>flow-maven-plugin</artifactId>
-                        <version>${flow.maven.plugin.version}</version>
+                        <artifactId>vaadin-maven-plugin</artifactId>
+                        <version>${vaadin.version}</version>
                         <executions>
                             <execution>
                                 <goals>
