@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <vaadin.version>14.9.6</vaadin.version>
+        <vaadin.version>14.9.7</vaadin.version>
     </properties>
 
     <pluginRepositories>
