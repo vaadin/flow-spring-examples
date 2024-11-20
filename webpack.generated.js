@@ -70,11 +70,11 @@ let stats;
 
 const transpile = !devMode || process.argv.find(v => v.indexOf('--transpile-es5') >= 0);
 
-const watchDogPrefix = '--watchDogPort=';
-let watchDogPort = devMode && process.argv.find(v => v.indexOf(watchDogPrefix) >= 0);
+// Open a connection with the Java dev-mode handler in order to finish
+// webpack-dev-mode when it exits or crashes.
+const watchDogPort = devMode && process.env.watchDogPort;
 let client;
 if (watchDogPort) {
-  watchDogPort = watchDogPort.substr(watchDogPrefix.length);
   const runWatchDog = () => {
     client = new require('net').Socket();
     client.setEncoding('utf8');
@@ -201,6 +201,16 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: (url, resourcePath) => {
+                // css urls may contain query string or fragment identifiers
+                // that should removed before resolving real path
+                // e.g
+                //  ../webfonts/fa-solid-900.svg#fontawesome
+                //  ../webfonts/fa-brands-400.eot?#iefix
+                if(url.includes('?'))
+                    url = url.substring(0, url.indexOf('?'));
+                if(url.includes('#'))
+                    url = url.substring(0, url.indexOf('#'));
+
                 // Only translate files from node_modules
                 const resolve = resourcePath.match(/(\\|\/)node_modules\1/)
                   && fs.existsSync(path.resolve(path.dirname(resourcePath), url));
@@ -256,9 +266,6 @@ module.exports = {
         plugins: [
           // workaround for Safari 10 scope issue (https://bugs.webkit.org/show_bug.cgi?id=159270)
           "@babel/plugin-transform-block-scoping",
-
-          // Edge does not support spread '...' syntax in object literals (#7321)
-          "@babel/plugin-proposal-object-rest-spread"
         ],
 
         presetOptions: {
