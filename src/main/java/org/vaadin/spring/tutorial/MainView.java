@@ -20,9 +20,8 @@ import java.util.Locale;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.i18n.LocaleChangeEvent;
@@ -39,7 +38,7 @@ public class MainView extends VerticalLayout implements LocaleChangeObserver {
             @Autowired ExampleTemplate template) {
         H1 heading = new H1("Vaadin + Spring examples");
         
-        Label greeting = new Label(greeter.sayHello());
+        NativeLabel greeting = new NativeLabel(greeter.sayHello());
         Style grretingStyle = greeting.getElement().getStyle();
         grretingStyle.set("display", "block");
         grretingStyle.set("margin-bottom", "10px");
