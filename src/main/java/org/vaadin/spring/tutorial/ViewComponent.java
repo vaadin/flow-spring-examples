@@ -17,13 +17,13 @@ package org.vaadin.spring.tutorial;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 
 @Route("view")
 @UIScope
-public class ViewComponent extends Label {
+public class ViewComponent extends NativeLabel {
 
     public ViewComponent(@Autowired Greeter greeter) {
         // it's the same Greeter instance as in the RootComponent class
