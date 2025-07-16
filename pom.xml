@@ -10,13 +10,13 @@
 
     <properties>
         <java.version>17</java.version>
-        <vaadin.version>24.8.3</vaadin.version>
+        <vaadin.version>24.8.0</vaadin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.3</version>
+        <version>3.4.6</version>
     </parent>
 
     <repositories>
@@ -119,7 +119,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.0.3</version>
+            <version>6.1.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
