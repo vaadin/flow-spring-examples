@@ -10,13 +10,13 @@
 
     <properties>
         <java.version>21</java.version>
-        <vaadin.version>25.0.7</vaadin.version>
+        <vaadin.version>25.1.0</vaadin.version>
     </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.3</version>
+        <version>4.0.4</version>
     </parent>
 
     <repositories>
@@ -121,11 +121,6 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.0.3</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
