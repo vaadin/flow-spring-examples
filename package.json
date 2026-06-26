@@ -16,7 +16,7 @@
     "proj4": "2.17.0",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "react-router": "7.17.0"
+    "react-router": "7.18.0"
   },
   "devDependencies": {
     "@babel/core": "7.29.7",
@@ -27,10 +27,10 @@
     "@rolldown/plugin-babel": "0.2.3",
     "@rollup/plugin-replace": "6.0.3",
     "@rollup/pluginutils": "5.4.0",
-    "@types/node": "25.9.3",
+    "@types/node": "25.9.4",
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-react": "6.0.3",
     "magic-string": "0.30.21",
     "rollup-plugin-brotli": "3.1.0",
     "rollup-plugin-visualizer": "7.0.1",
@@ -38,7 +38,7 @@
     "transform-ast": "2.4.4",
     "typescript": "6.0.3",
     "vite": "8.0.16",
-    "vite-plugin-checker": "0.14.1"
+    "vite-plugin-checker": "0.14.4"
   },
   "overrides": {
     "@vaadin/router": "2.0.1",
@@ -144,7 +144,7 @@
       "proj4": "2.17.0",
       "react": "19.2.7",
       "react-dom": "19.2.7",
-      "react-router": "7.17.0"
+      "react-router": "7.18.0"
     },
     "devDependencies": {
       "@babel/core": "7.29.7",
@@ -155,10 +155,10 @@
       "@rolldown/plugin-babel": "0.2.3",
       "@rollup/plugin-replace": "6.0.3",
       "@rollup/pluginutils": "5.4.0",
-      "@types/node": "25.9.3",
+      "@types/node": "25.9.4",
       "@types/react": "19.2.17",
       "@types/react-dom": "19.2.3",
-      "@vitejs/plugin-react": "6.0.2",
+      "@vitejs/plugin-react": "6.0.3",
       "magic-string": "0.30.21",
       "rollup-plugin-brotli": "3.1.0",
       "rollup-plugin-visualizer": "7.0.1",
@@ -166,9 +166,9 @@
       "transform-ast": "2.4.4",
       "typescript": "6.0.3",
       "vite": "8.0.16",
-      "vite-plugin-checker": "0.14.1"
+      "vite-plugin-checker": "0.14.4"
     },
-    "hash": "6fbceb67038f2e5f5ad6f13f4e44b4b1964abeaebfce5c207e479ea6bcd38d62",
+    "hash": "a17916c24a56d3aa918ec9618180d0d2244a9c9b9e3810406fbba712f387d82e",
     "overrides": {
       "@vaadin/a11y-base": "25.2.0",
       "@vaadin/accordion": "25.2.0",
